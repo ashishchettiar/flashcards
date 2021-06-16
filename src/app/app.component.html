@@ -1,0 +1,10 @@
+
+  <select #langSelect (change)="onLanguageChanged(langSelect.value)">
+    <option *ngFor="let lang of supportedLanguages" [value]="lang" [selected]="lang === selectedLanguage">{{ lang }}</option>
+  </select>
+  
+  <h1>Cards</h1>
+  <app-card-list [selectedLanguage]="selectedLanguage"></app-card-list>
+
+  <h1>Add new card</h1>
+  <app-new-card [supportedLanguages]="supportedLanguages"></app-new-card>
